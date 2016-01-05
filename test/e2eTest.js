@@ -30,6 +30,7 @@ describe('Amazon', function () {
             request(app)
                 .get('/stock/1234')
                 .set('Content-Type', 'application/json')
+                .set('Accept', 'application/json')
                 .expect(200)
                 .end(function (err, res) {
 
