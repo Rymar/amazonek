@@ -21,8 +21,7 @@ module.exports = function (stockRep) {
                         'application/json': function(){
                             res.send({ status: 'available' });
                         }
-
-                    };
+                    });
                 } else {
                     res.status(404).json({ msg: 'book not found'});
                 }
