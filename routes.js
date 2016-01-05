@@ -14,7 +14,15 @@ module.exports = function (stockRep) {
             stockRep.getBook(req.params.isbn).then(function (book){
 
                 if (book) {
-                    res.json(book);
+                    res.format({
+                        'text/html': function() {
+                            res.send('<div>' + book.isbn + '-' + book.count + '</div>');
+                        },
+                        'application/json': function(){
+                            res.send({ status: 'available' });
+                        }
+
+                    };
                 } else {
                     res.status(404).json({ msg: 'book not found'});
                 }

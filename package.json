@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha",
-    "lint": "jshint --exclude=node_modules/** **.js"
+    "lint": "jshint --exclude=node_modules/** **.js",
+    "smoke": ""
   },
   "author": "",
   "license": "ISC",
