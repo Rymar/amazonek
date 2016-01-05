@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 
-var dbPromise = MongoClient.connect('mongodb://localhost:27017/amazon');
+var dbPromise = MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/amazon');
 
 module.exports = function () {
     return {
