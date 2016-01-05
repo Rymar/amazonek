@@ -19,7 +19,7 @@ module.exports = function (stockRep) {
                             res.send('<div>' + book.isbn + '-' + book.count + '</div>');
                         },
                         'application/json': function(){
-                            res.send({ status: 'available' });
+                            res.json(book);
                         }
                     });
                 } else {
@@ -43,6 +43,6 @@ module.exports = function (stockRep) {
                 message: err.message,
                 error: (process.env.NODE_ENV === 'production') ? {} : err.toString()
             });
-        }
-    };
+   ;     }
+    }
 };
